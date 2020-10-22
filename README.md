@@ -1,24 +1,15 @@
 # theme02
 
-## Project setup
+## Project run
+timemanager
+```
+cd timemanager
+mix deps.get
+mix ecto.setup
+mix phx.server
+```
+vuejs in a new terminal
 ```
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
