@@ -33,14 +33,14 @@ export default {
         .get("http://localhost:4000/api/users" ,{params: {username: this.username}})
         .then(response => userID = response.userID , this.error=true);
 
-        let clock = null;
+        let clockResponse = null;
         if (!this.error) {
           axios
           .get("http://localhost:4000/api/clocks/" + userID )
-          .then(response => clock = response , this.error=true);
+          .then(response => clockResponse = response , this.error=true);
         
         
-          if (this.startDateTime !== clock.time && this.clockIn !== clock.status) {
+          if (this.startDateTime !== clockResponse.time && this.clockIn !== clockResponse.status) {
             axios
             .post("http://localhost:4000/api/clocks/" + userID, 
             {
