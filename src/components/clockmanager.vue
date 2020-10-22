@@ -13,7 +13,7 @@
 
 <script>
 import moment from 'moment';
-//import axios from 'axios';
+import axios from 'axios';
 export default {
 
   name: 'clockmanager',
@@ -28,25 +28,28 @@ export default {
   },
   methods: {
       refresh : function() {
-        // let userID = null;
-        // axios
-        // .get("http://localhost:4000/api/users" ,{params: {username: this.username}})
-        // .then(response => userID = response.userID , this.error=true);
+        let userID = null;
+        axios
+        .get("http://localhost:4000/api/users" ,{params: {username: this.username}})
+        .then(response => userID = response.userID , this.error=true);
 
-        // if (!this.error) {
-        //   let clock = null;
-        //   axios
-        //   .get("http://localhost:4000/api/clocks/" + userID )
-        //   .then(response => clock = response , this.error=true);
-        // }
+        let clock = null;
+        if (!this.error) {
+          axios
+          .get("http://localhost:4000/api/clocks/" + userID )
+          .then(response => clock = response , this.error=true);
         
-        // this.startDateTime = moment(clock.time).format('LLLL');
-        // this.clockIn = clock.status
-
-        // Mock
         
-        this.startDateTime = moment('2020-12-12 12:12:12').format('LLLL');
-        this.clockIn = true
+          if (this.startDateTime !== clock.time && this.clockIn !== clock.status) {
+            axios
+            .post("http://localhost:4000/api/clocks/" + userID, 
+            {
+              time : this.startDateTime,
+              status : this.clockIn,
+              user : this.username
+            })
+          }
+        }
       },
 
       clock() {
