@@ -23,7 +23,6 @@ defmodule Timemanager.MixProject do
       extra_applications: [:logger, :runtime_tools]
     ]
   end
-
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
@@ -33,6 +32,7 @@ defmodule Timemanager.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:cors_plug, "~> 2.0"},
       {:phoenix, "~> 1.5.3"},
       {:phoenix_ecto, "~> 4.1"},
       {:ecto_sql, "~> 3.4"},
@@ -42,8 +42,7 @@ defmodule Timemanager.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"},
-      {:timex, "~> 3.5"}
+      {:plug_cowboy, "~> 2.0"}
     ]
   end
 
