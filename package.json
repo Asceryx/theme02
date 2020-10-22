@@ -10,10 +10,10 @@
   "dependencies": {
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
-    "bootstrap-vue": "^2.18.0",
-    "chart.js": "^2.9.4",
+    "bootstrap-vue": "^2.18.1",
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
+    "postgres": "^1.0.2",
     "vue": "^2.6.12",
     "vue-chartjs": "^3.5.1",
     "vue-chartmaker": "^1.4.4",
