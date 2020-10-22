@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <b-nav tabs>
-      <b-nav-item v-bind:active="tab === 1" v-on:click="tab = 1">
-        <router-link v-bind:to="{ name: 'workingtimes' , params: { userID: 'user' }}">Workingtimes</router-link>
+      <b-nav-item v-bind:active="tab === 1" v-on:click="tab = 1" to="{ name: 'workingtimes' , params: { userID: 'user' }}">
+        Workingtimes
       </b-nav-item>
-      <b-nav-item v-bind:active="tab === 2" v-on:click="tab = 2">
-        <router-link v-bind:to="{ name: 'workingtime' , params: { userid: 'user', workingtimeid: 'workingtimeid'}}">Workingtime</router-link>
+      <b-nav-item v-bind:active="tab === 2" v-on:click="tab = 2" to="{ name: 'workingtime' , params: { userid: 'user', workingtimeid: 'workingtimeid'}}"> 
+        Workingtime
       </b-nav-item>
-      <b-nav-item v-bind:active="tab === 3" v-on:click="tab = 3">
-        <router-link v-bind:to="{ name: 'clockmanager' , params: { username: 'user' }}">ClockManager</router-link>
+      <b-nav-item v-bind:active="tab === 3" v-on:click="tab = 3" to="{ name: 'clockmanager' , params: { username: 'user' }}">
+        ClockManager
       </b-nav-item>
-      <b-nav-item v-bind:active="tab === 4" v-on:click="tab = 4">
-        <router-link v-bind:to="{ name: 'chartmanager' , params: { userid: 'user' }}">ChartManager</router-link>
+      <b-nav-item v-bind:active="tab === 4" v-on:click="tab = 4" to="{ name: 'chartmanager' , params: { userid: 'user' }}">
+        ChartManager
       </b-nav-item>
     </b-nav>
 
